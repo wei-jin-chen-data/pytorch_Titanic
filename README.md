@@ -1,22 +1,17 @@
 # 🚢 Titanic Survival Prediction using PyTorch
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)
-![Pandas](https://img.shields.io/badge/Pandas-Latest-150458.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-
 本專案使用 **PyTorch** 建構多層感知機（Multilayer Perceptron, MLP）深度學習模型，針對 Kaggle 經典的 **Titanic: Machine Learning from Disaster** 資料集進行乘客生存預測。
 
 ---
 
-## 📌 專案亮點與流程 (Pipeline Workflow)
+## 📌 專案亮點與流程 
 
-1. **資料探索與處理 (EDA & Feature Engineering)**：
+1. **資料探索與處理 **：
    - 視覺化分析 `Sex` 與 `Pclass` 對生存率的關鍵影響。
-   - 使用類別對應（Mapping）將文字特徵轉為數值標籤（如：`male: 1`, `female: 0`）。
-   - 對缺失值（如 `Age` 欄位）進行均值填補（Imputation）。
-2. **靈活的驗證集劃分 (Validation Split)**：
-   - 將原始訓練集手動分割出 100 筆獨立的驗證集（Validation Set），用於模型超參數調優與早期觀察，防止模型「死背」數據（Overfitting）。
+   - 使用類別對應將文字特徵轉為數值標籤（如：`male: 1`, `female: 0`）。
+   - 對缺失值（如 `Age` 欄位）進行均值填補。
+2. **驗證集劃分 **：
+   - 將原始訓練集手動分割出 100 筆獨立的驗證集，用於模型超參數調整，防止模型「死背」數據（Overfitting）。
 3. **自訂 PyTorch Dataset & DataLoader**：
    - 繼承 `torch.utils.data.Dataset` 封裝訓練、驗證與測試集。
    - 利用 `DataLoader` 進行 Batch 化處理（Batch Size = 100）與資料 Shuffle。
@@ -45,36 +40,35 @@
 * **三等艙 (Class 3)**：**24.24%**
 * **分析**：艙等越高，存活率呈現明顯的遞減趨勢（Class 1 > Class 2 > Class 3），顯示社經地位與船艙位置顯著影響獲救機會。
 
-![票的等級對存活關係]()
+![票的等級對存活關係](pytorch_Titanic票的等級對存活關係.jpg)
 
 ---
 
-## 🛠️ 模型架構 (Model Architecture)
+模型架構：
 
-模型採用簡潔有效的多層感知機 (MLP) 架構：
+```text
 Input Features (3: Sex_Int, Pclass, Age)
-│
-▼
+       │
+       ▼
 ┌──────────────┐
 │ Linear (3, 64)│
 └──────┬───────┘
-│
-▼
+       │
+       ▼
 ┌──────────────┐
 │     ReLU     │
 └──────┬───────┘
-│
-▼
+       │
+       ▼
 ┌──────────────┐
 │ Linear (64, 2)│
 └──────┬───────┘
-│
-▼
+       │
+       ▼
 Output Logits (2: Dead [0], Survived [1])
+```
 
----
-
-## 📈 訓練與驗證結果 (Training & Validation Results)
+## 📈 訓練與驗證結果 
 
 經過 50 次 Epoch 的訓練，模型表現如下：
 
