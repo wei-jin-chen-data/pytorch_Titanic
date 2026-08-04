@@ -81,3 +81,16 @@ Epoch 1:  train_acc = 54.74% | val_acc = 58.00%
 Epoch 15: train_acc = 79.65% | val_acc = 73.00%
 Epoch 38: train_acc = 80.15% | val_acc = 83.00%  <-- Peak Performance
 Epoch 50: train_acc = 79.65% | val_acc = 75.00%
+```
+
+## 📝 檔案結構
+
+```text
+.
+├── train.csv                                 # Kaggle 訓練集
+├── test.csv                                  # Kaggle 測試集
+├── pytorch_Titanic性別對存活關係.jpg           # 性別分析圖
+├── pytorch_Titanic票的等級對存活關係.jpg       # 艙等分析圖
+├── main.py                                   # 主要訓練與預測腳本
+└── README.md                                 # 專案說明檔案
+```
