@@ -6,16 +6,16 @@
 
 ## 📌 專案亮點與流程 
 
-1. **資料探索與處理 **：
+1. 資料探索與處理 ：
    - 視覺化分析 `Sex` 與 `Pclass` 對生存率的關鍵影響。
    - 使用類別對應將文字特徵轉為數值標籤（如：`male: 1`, `female: 0`）。
    - 對缺失值（如 `Age` 欄位）進行均值填補。
-2. **驗證集劃分 **：
+2. 驗證集劃分 ：
    - 將原始訓練集手動分割出 100 筆獨立的驗證集，用於模型超參數調整，防止模型「死背」數據（Overfitting）。
-3. **自訂 PyTorch Dataset & DataLoader**：
+3. 自訂 PyTorch Dataset & DataLoader：
    - 繼承 `torch.utils.data.Dataset` 封裝訓練、驗證與測試集。
    - 利用 `DataLoader` 進行 Batch 化處理（Batch Size = 100）與資料 Shuffle。
-4. **深度學習模型架構**：
+4. 深度學習模型架構：
    - 搭建包含非線性啟動函數（ReLU）的前饋神經網路。
    - 使用 `CrossEntropyLoss` 與 `Adam` 優化器進行 50 個 Epoch 的訓練與驗證。
 
