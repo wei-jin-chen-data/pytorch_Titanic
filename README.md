@@ -1,10 +1,10 @@
-# 🚢 Titanic Survival Prediction using PyTorch
+#  Titanic Survival Prediction using PyTorch
 
 本專案使用 **PyTorch** 建構多層感知機（Multilayer Perceptron, MLP）深度學習模型，針對 Kaggle 經典的 **Titanic: Machine Learning from Disaster** 資料集進行乘客生存預測。
 
 ---
 
-## 📌 專案亮點與流程 
+##  專案亮點與流程 
 
 1. 資料探索與處理 ：
    - 視覺化分析 `Sex` 與 `Pclass` 對生存率的關鍵影響。
@@ -21,7 +21,7 @@
 
 ---
 
-## 📊 資料探索診斷 (Exploratory Data Analysis)
+##  資料探索診斷 (Exploratory Data Analysis)
 
 藉由 Seaborn 繪製直方圖並統計平均存活率，資料顯示特徵與生存率有極高的相關性：
 
@@ -68,7 +68,7 @@ Input Features (3: Sex_Int, Pclass, Age)
 Output Logits (2: Dead [0], Survived [1])
 ```
 
-## 📈 訓練與驗證結果 
+##  訓練與驗證結果 
 
 經過 50 次 Epoch 的訓練，模型表現如下：
 
@@ -83,7 +83,7 @@ Epoch 38: train_acc = 80.15% | val_acc = 83.00%  <-- Peak Performance
 Epoch 50: train_acc = 79.65% | val_acc = 75.00%
 ```
 
-## 📝 檔案結構
+##  檔案結構
 
 ```text
 .
